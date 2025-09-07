@@ -1,9 +1,9 @@
 # Tripify
 
-Tripify is a travel listing web app designed to help users discover, list, and manage vacation rentals and destinations.
+Tripify is a personal travel listing web app designed to help users discover, list, and manage vacation rentals and destinations.
 
-> **Note:** This is the first phase of development for my college project.  
-> I plan to continue working on Tripify and add more features after October.
+> **Note:**  
+> This is my personal project. I am currently pausing development for my college project, but I will continue working on Tripify after **October 5th**.
 
 ---
 
@@ -44,7 +44,7 @@ Explore the current look and feel of Tripify below:
 
 ## 🚀 Roadmap
 
-- 📅 Next development phase planned for October (after college project)
+- 📅 Next development phase will continue after **October 5th**
 - Future features may include:
   - User authentication & profiles
   - Booking functionality
@@ -55,7 +55,7 @@ Explore the current look and feel of Tripify below:
 
 ## 📦 How to Run
 
-> Setup and usage instructions will be added in the next phase.
+> Setup and usage instructions will be added after I resume development.
 
 ---
 
