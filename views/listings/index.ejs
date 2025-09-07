@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %>
+<h3 class="mb-4">All Listings</h3>
+<div class="row g-4">
+   <% for(let listing of allListings){ %>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <a href="/listings/<%= listing._id %>" class="text-decoration-none text-reset">
+                <div class="card listing-card h-100">
+                    <div class="ratio ratio-4x3">
+                        <img src="<%= listing.image && listing.image.url ? listing.image.url : 'https://via.placeholder.com/600x450?text=Tripify' %>" class="card-img-top object-fit-cover" alt="<%= listing.title %>">
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title mb-1"><%= listing.title %></h6>
+                        <div class="small text-muted"><%= listing.location %> • <%= listing.country %></div>
+                        <div class="mt-2 fw-semibold">₹ <%= listing.price != null ? Number(listing.price).toLocaleString('en-IN') : 'N/A' %></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+   <% } %>
+</div>

@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') %>
+<h3 class="mb-3">Listing Details</h3>
+<div class="mb-3">
+    <div class="ratio ratio-16x9">
+        <img src="<%= listing.image && listing.image.url ? listing.image.url : 'https://via.placeholder.com/1200x675?text=Tripify' %>" alt="<%= listing.title %>" class="w-100 object-fit-cover rounded-4">
+    </div>
+    <div class="small text-muted mt-1"><%= listing.location %> • <%= listing.country %></div>
+    <div class="fw-semibold mt-1">₹ <%= listing.price != null ? Number(listing.price).toLocaleString('en-IN') : 'N/A' %></div>
+    <hr>
+</div>
+<div class="listing-detail card border-0 rounded-4 shadow-sm">
+    <div class="card-body">
+        <div class="d-flex align-items-start justify-content-between flex-wrap gap-2 mb-2">
+            <div>
+                <h4 class="mb-0"><%= listing.title %></h4>
+                <div class="chips mt-2">
+                    <span class="chip"><i class="bi bi-geo-alt"></i> <%= listing.location %></span>
+                    <span class="chip"><i class="bi bi-globe"></i> <%= listing.country %></span>
+                    <span class="chip price">₹ <%= listing.price != null ? Number(listing.price).toLocaleString('en-IN') : 'N/A' %></span>
+                </div>
+            </div>
+        </div>
+        <p class="text-secondary mb-0"><%= listing.description %></p>
+        <hr>
+        <div class="d-flex gap-2">
+            <a class="btn btn-outline-secondary" href="/listings"><i class="bi bi-arrow-left"></i> Back</a>
+            <a class="btn btn-primary" href="/listings/<%= listing._id %>/edit"><i class="bi bi-pencil"></i> Edit</a>
+            <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                <button class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
+            </form>
+        </div>
+    </div>
+  </div>

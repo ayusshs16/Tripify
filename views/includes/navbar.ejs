@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-dark nav-gradient mb-4 sticky-top shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/listings">
+            <img src="/img/tripify-logo.png" onerror="this.onerror=null;this.src='/img/tripify-logo.svg';" alt="Tripify" width="28" height="28" class="d-inline-block align-text-top">
+            Tripify
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navContent">
+            <div class="mx-lg-auto">
+                <button class="search-pill d-flex align-items-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#expandedSearch" aria-expanded="true" aria-controls="expandedSearch">
+                    <i class="bi bi-search"></i>
+                    <span>Search destinations</span>
+                </button>
+                <div class="collapse mt-2" id="expandedSearch">
+                    <form class="search-panel d-grid gap-3" role="search" action="/listings" method="GET">
+                        <div>
+                            <label class="form-label">Location</label>
+                            <input class="form-control" type="search" name="q" placeholder="Where are you going?" aria-label="Location">
+                        </div>
+                        <div class="d-flex gap-2 flex-column flex-sm-row">
+                            <div class="flex-fill">
+                                <label class="form-label">Check in</label>
+                                <input class="form-control" type="text" name="from" placeholder="dd/mm/yy" aria-label="From date" onfocus="this.type='date'" onblur="if(!this.value) this.type='text'">
+                            </div>
+                            <div class="flex-fill">
+                                <label class="form-label">Check out</label>
+                                <input class="form-control" type="text" name="to" placeholder="dd/mm/yy" aria-label="To date" onfocus="this.type='date'" onblur="if(!this.value) this.type='text'">
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2 flex-column flex-sm-row align-items-end">
+                            <div class="flex-fill">
+                                <label class="form-label">Guests</label>
+                                <input class="form-control" type="number" min="1" name="guests" placeholder="Guests" aria-label="Guests">
+                            </div>
+                            <button class="btn btn-primary w-100 w-sm-auto" type="submit">
+                                <i class="bi bi-search"></i>
+                                <span>Search</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center nav-tabs-bar flex-column flex-lg-row">
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-1" href="/">
+                        <i class="bi bi-house-door-fill"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-1" href="/listings">
+                        <i class="bi bi-card-list"></i> All Listings
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-1" href="/listings/new">
+                        <i class="bi bi-plus-circle-fill"></i> Add New
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle"></i> Account
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Bookings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

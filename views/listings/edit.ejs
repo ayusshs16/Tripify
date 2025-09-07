@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') %>
+<div class="form-accent mb-3"><i class="bi bi-pencil-square"></i> Edit listing</div>
+<div class="mb-3">
+    <div class="ratio ratio-16x9">
+        <img src="<%= listing.image && listing.image.url ? listing.image.url : 'https://via.placeholder.com/1200x675?text=Tripify' %>" alt="<%= listing.title %>" class="w-100 object-fit-cover rounded-4">
+    </div>
+    <div class="small text-muted mt-1">Preview • changes will update after saving</div>
+    <hr>
+    </div>
+<form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="row g-3 form-card">
+    <div class="col-md-6">
+        <label class="form-label">Title</label>
+        <input name="title" class="form-control" placeholder="Title" type="text" value="<%= listing.title %>">
+    </div>
+    <div class="col-12">
+        <label class="form-label">Description</label>
+        <textarea name="description" class="form-control" placeholder="Description"><%= listing.description %></textarea>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Image URL</label>
+        <input name="image" class="form-control" placeholder="Image URL" type="text" value="<%= listing.image && listing.image.url ? listing.image.url : '' %>">
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Price</label>
+        <input name="price" class="form-control" placeholder="Price" type="number" value="<%= listing.price %>">
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Country</label>
+        <input name="country" class="form-control" placeholder="Country" type="text" value="<%= listing.country %>">
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Location</label>
+        <input name="location" class="form-control" placeholder="Location" type="text" value="<%= listing.location %>">
+    </div>
+    <div class="col-12 d-flex justify-content-end">
+        <button class="btn btn-primary">Update</button>
+    </div>
+</form>
